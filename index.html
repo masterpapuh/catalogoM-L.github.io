@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo | Mi Tienda de Ropa</title>
+  <link rel="stylesheet" href="pag2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .bolitas-colores {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .bolita-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .bolita-color:hover {
+      opacity: 0.7;
+    }
+    /* Clase activa cuando se selecciona un color */
+    .bolita-seleccionada {
+      border: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="contenedor-header">
+        <a href="index.html" class="logo-link">
+            <img src="images/ChatGPT Image 19 abr 2025, 07_17_54 p.m..png" alt="Mi Tienda de Ropa" class="logo">
+        </a>
+        <h1>Explorá nuestro catálogo</h1>
+        <p>Temporada  Otoño🍁 - Invierno❄️ </p>
+    </div>
+  </header>
+
+  <main class="catalogo">
+    <!-- Productos con funcionalidad de modal -->
+    
+    <h3>Sweaters</h3>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Sweater de hombre bordo',
+       'images/traced-Sweater Bordo.png',
+       'Colores disponibles: Bordo, Negro, Marron, Gris',
+       ['#800000','#000000','#A18262','#666666'],
+       [
+         'images/traced-Sweater Bordo.png',
+         'images/traced-Sweater Gris.png',
+         'images/traced-Sweater Marron.png',
+         'images/traced-Sweater Negro.png'
+       ],
+       [
+         'Sweater de hombre bordo',
+         'Sweater de hombre gris',
+         'Sweater de hombre marron',
+         'Sweater de hombre negro'
+       ],
+       ['S','M']
+     )">
+  <img src="images/traced-Sweater Bordo.png" alt="Sweater de hombre bordo">
+  <h2>Sweater de hombre bordo</h2>
+  <p>$10.000</p>
+</div>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Sweater de hombre gris',
+       'images/traced-Sweater Gris.png',
+       'Colores disponibles: Bordo, Negro, Marron, Gris',
+       ['#800000','#000000','#A18262','#666666'],
+       ['images/traced-Sweater Gris.png'],
+       ['Sweater de hombre gris'],
+       ['S','M']
+     )">
+  <img src="images/traced-Sweater Gris.png" alt="Sweater de hombre gris">
+  <h2>Sweater de hombre gris</h2>
+  <p>$10.000</p>
+</div>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Sweater de hombre marron',
+       'images/traced-Sweater Marron.png',
+       'Colores disponibles: Bordo, Negro, Marron, Gris',
+       ['#800000','#000000','#A18262','#666666'],
+       ['images/traced-Sweater Marron.png'],
+       ['Sweater de hombre marron'],
+       ['S','M']
+     )">
+  <img src="images/traced-Sweater Marron.png" alt="Sweater de hombre marron">
+  <h2>Sweater de hombre marron</h2>
+  <p>$10.000</p>
+</div>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Sweater de hombre negro',
+       'images/traced-Sweater Negro.png',
+       'Colores disponibles: Bordo, Negro, Marron, Gris',
+       ['#800000','#000000','#A18262','#666666'],
+       ['images/traced-Sweater Negro.png'],
+       ['Sweater de hombre negro'],
+       ['S','M']
+     )">
+  <img src="images/traced-Sweater Negro.png" alt="Sweater de hombre negro">
+  <h2>Sweater de hombre negro</h2>
+  <p>$10.000</p>
+</div>
+
+<!-- Sweaters de Darlon -->
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Sweater de darlon negro',
+       'images/traced-SWEATERDARLONNEGRO.png',
+       'Colores disponibles: Negro, Blanco, Beige',
+       ['#000000','#F5F4F0','#CBBD93'],
+       [
+         'images/traced-SWEATERDARLONNEGRO.png',
+         'images/traced-SWEATERDARLONBLANCO.png',
+         'images/traced-SWEATERDARLONBEIGE.png'
+       ],
+       [
+         'Sweater de darlon negro',
+         'Sweater de darlon blanco',
+         'Sweater de darlon beige'
+       ],
+       ['3','6']
+     )">
+  <img src="images/traced-SWEATERDARLONNEGRO.png" alt="Sweater de darlon negro">
+  <h2>Sweater de darlon negro</h2>
+  <p>$12.000</p>
+</div>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Sweater de darlon blanco',
+       'images/traced-SWEATERDARLONBLANCO.png',
+       'Colores disponibles: Negro, Blanco, Beige',
+       ['#000000','#F5F4F0','#CBBD93'],
+       [
+         'images/traced-SWEATERDARLONNEGRO.png',
+         'images/traced-SWEATERDARLONBLANCO.png',
+         'images/traced-SWEATERDARLONBEIGE.png'
+       ],
+       [
+         'Sweater de darlon negro',
+         'Sweater de darlon blanco',
+         'Sweater de darlon beige'
+       ],
+       ['3','6']
+     )">
+  <img src="images/traced-SWEATERDARLONBLANCO.png" alt="Sweater de darlon blanco">
+  <h2>Sweater de darlon blanco</h2>
+  <p>$12.000</p>
+</div>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Sweater de darlon beige',
+       'images/traced-SWEATERDARLONBEIGE.png',
+       'Colores disponibles: Negro, Blanco, Beige',
+       ['#000000','#F5F4F0','#CBBD93'],
+       [
+         'images/traced-SWEATERDARLONNEGRO.png',
+         'images/traced-SWEATERDARLONBLANCO.png',
+         'images/traced-SWEATERDARLONBEIGE.png'
+       ],
+       [
+         'Sweater de darlon negro',
+         'Sweater de darlon blanco',
+         'Sweater de darlon beige'
+       ],
+       ['3','6']
+     )">
+  <img src="images/traced-SWEATERDARLONBEIGE.png" alt="Sweater de darlon beige">
+  <h2>Sweater de darlon beige</h2>
+  <p>$12.000</p>
+</div>
+
+<h3>Buzos</h3>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Buzo rojo talle M',
+       'images/traced-BUZO ROJO M.png',
+       'Colores disponibles: Rojo vino',
+       ['#56070C'],
+       ['images/traced-BUZO ROJO M.png'],
+       ['Buzo rojo talle M'],
+       ['M']
+     )">
+  <img src="images/traced-BUZO ROJO M.png" alt="Buzo rojo talle M">
+  <h2>Buzo frizado rojo talle M</h2>
+  <p>$16.000</p>
+</div>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Buzo con capucha talle L',
+       'images/traced-BUZOVERDECONCAPUCHA L.png',
+       'Colores disponibles: Verde oscuro',
+       ['#4f5D5A'],
+       ['images/traced-BUZOVERDECONCAPUCHA L.png'],
+       ['Buzo con capucha talle L'],
+       ['L']
+     )">
+  <img src="images/traced-BUZOVERDECONCAPUCHA L.png" alt="Buzo con capucha talle L">
+  <h2>Buzo frizado con capucha talle L</h2>
+  <p>$16.000</p>
+</div>
+
+<h3>Joggings</h3>
+
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Joggins recto frizado de hombre',
+       'images/upscalemedia-transformed.png',
+       'Colores disponibles: Negro, Gris oscuro, Azul , Gris',
+       ['#000000','#808080','#2c3363','#848884'],
+       ['images/upscalemedia-transformed.png'],
+       ['Joggins recto frizado de hombre'],
+       ['1','2','3','4','5']
+     )">
+  <img src="images/upscalemedia-transformed.png" alt="Joggings recto frizado de hombre">
+  <h2>Jogging recto frizado de hombre</h2>
+  <p>$13.500</p>
+</div>
+<div class="producto fade-in"
+     onclick="mostrarModal(
+       'Joggings con puño frizado de hombre',
+       'images/joggins con puño.png',
+       'Colores disponibles: Negro, Gris oscuro, Gris',
+       ['#000000','#808080','#848884'],
+       ['images/joggins con puño.png'],
+       ['Joggings con puño frizado de hombre'],
+       ['1','4','5']
+     )">
+  <img src="images/joggins con puño.png" alt="Joggings con puño frizado de hombre">
+  <h2>Jogging con puño frizado de hombre</h2>
+  <p>$12.000</p>
+</div>
+
+  </main>
+
+<!-- 🔽 MODAL DE PRODUCTO -->
+<div class="modal" id="modalProducto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+
+    <!-- IZQUIERDA: imagen principal -->
+    <div class="modal-izquierda">
+      <img id="imagenPrincipal" src="" alt="Producto ampliado">
+    </div>
+
+    <!-- DERECHA: título, descripción, colores, y bloque de miniaturas+talles -->
+    <div class="modal-derecha">
+      <h2 id="tituloProducto">Título</h2>
+      <p id="descripcionProducto">Descripción o colores disponibles.</p>
+    
+      <!-- 1. Bolitas de colores -->
+      <div class="bolitas-colores" id="bolitasColoresContainer"></div>
+    
+      <!-- 2. Talles disponibles -->
+      <h3 class="subtitulo-talles">Talles disponibles</h3>
+      <div class="talles-container" id="tallesContainer"></div>
+    
+      <!-- 3. Miniaturas de modelos -->
+      <div class="modelos-miniaturas" id="miniaturasContainer"></div>
+    </div>
+  </div>
+</div>
+<!-- 🔼 FIN DEL MODAL -->
+
+  <footer class="footer">
+    <div class="contactos">
+      <a href="mailto:matias.gabriel12p@gmail.com" title="Enviar correo">
+        <img src="images/281769.png" alt="Correo" class="icono-contacto">
+      </a>
+      <a href="https://wa.me/+5491134598380?text=Hola%2C%20estoy%20interesado%20en%20su%20cat%C3%A1logo" target="_blank" title="WhatsApp">
+        <img src="images/social.png" alt="WhatsApp" class="icono-contacto">
+      </a>
+    </div>
+    <p>&copy; 2025 M&L Catalogo de ropa. Todos los derechos reservados.</p>
+  </footer>
+
+  <a id="whatsapp-fixed" href="https://wa.me/+5491134598380?text=Hola%2C%20estoy%20interesado%20en%20su%20cat%C3%A1logo" target="_blank">
+    <img src="images/social.png" alt="WhatsApp">
+  </a>
+
+    
+  <script src="script2.js"></script>
+</body>
+</html>

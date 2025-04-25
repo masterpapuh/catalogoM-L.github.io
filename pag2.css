@@ -1,0 +1,562 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: whitesmoke;
+    color: whitesmoke;
+  }
+  
+  /* Header */
+  .header {
+    text-align: left;
+    padding: 1rem 1rem;
+    background-color: black;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease, padding 0.3s ease;
+  }
+  
+  /* Ocultar header al bajar */
+  .header--hidden {
+    transform: translateY(-100%);
+  }
+  
+  /* Contenedor del header con logo y texto */
+  .contenedor-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Enlace del logo */
+  .logo-link {
+    flex-shrink: 0;
+  }
+  
+  /* Imagen del logo */
+  .logo {
+    width: 80px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    padding: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  /* Texto del header */
+  .texto-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 700;
+  }
+  
+  .texto-header p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Catálogo */
+  .catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  /* Tarjetas de producto */
+  .producto {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.5s ease;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .producto.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .producto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .producto h2 {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+  }
+  
+  .producto p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer */
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  }
+  .footer p{
+    color: black;
+  }
+  .footer .contactos {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  /* Íconos de contacto */
+  .icono-contacto {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .icono-contacto:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+  }
+  
+  /* WhatsApp flotante */
+  #whatsapp-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+  }
+  
+  #whatsapp-fixed img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  #whatsapp-fixed img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .logo {
+      width: 60px;
+    }
+    .texto-header h1 {
+      font-size: 1.5rem;
+    }
+    .texto-header p {
+      font-size: 0.9rem;
+    }
+    .header {
+      padding: 0.75rem 1rem;
+    }
+    .catalogo {
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .producto h2 {
+      font-size: 1.1rem;
+    }
+    .producto p {
+      font-size: 0.9rem;
+    }
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 2rem;
+  }
+  
+  .modal-contenido {
+    background-color: #fff;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 800px;
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    flex-wrap: wrap;
+  }
+  
+  .modal-izquierda {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .modal-izquierda img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .modal-derecha {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .modal-derecha h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal-derecha p {
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .modelos-miniaturas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+  
+  .modelos-miniaturas img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+  }
+  
+  .modelos-miniaturas img:hover {
+    transform: scale(1.1);
+    border-color: #333;
+  }
+  
+  .cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.7rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .cerrar-modal:hover {
+    color: #333;
+  }
+  /* Ajustes para móvil del modal */
+@media (max-width: 600px) {
+    .modal {
+      padding: 1rem;
+      align-items: flex-start; /* para que no quede todo muy arriba */
+    }
+  
+    .modal-contenido {
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 1rem !important;
+      margin-top: 2rem;
+      box-sizing: border-box;
+    }
+  
+    .cerrar-modal {
+      top: 8px !important;
+      right: 8px !important;
+      font-size: 2rem !important;
+      z-index: 3000 !important;
+      color: #fff !important;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+    }
+  
+    .modal-izquierda,
+    .modal-derecha {
+      width: 100% !important;
+      min-width: auto !important;
+    }
+  
+    .modal-izquierda img {
+      width: 90% !important;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+  
+    .modal-derecha {
+      padding: 0 !important;
+    }
+  
+    .modelos-miniaturas {
+      justify-content: center;
+    }
+  
+    .modelos-miniaturas img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  /* Hacer sticky el contenedor de miniaturas */
+.modelos-miniaturas {
+    position: sticky;
+    bottom: 1rem;
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 2500;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  /* Ajustes específicos para móvil */
+  @media (max-width: 600px) {
+    .modelos-miniaturas {
+      bottom: 0.5rem;
+      padding: 0.4rem;
+      gap: 0.4rem;
+    }
+    .modelos-miniaturas img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  @media (max-width: 768px) {
+    .contenedor-header {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+    }
+    .logo {
+      width: 60px;
+    }
+    .texto-header h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .texto-header p {
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contenedor-header {
+      padding: 0.25rem 0.5rem;
+    }
+    .logo {
+      width: 50px;
+    }
+    .texto-header h1 {
+      font-size: 1.2rem;
+    }
+    .texto-header p {
+      font-size: 0.8rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .modal-contenido {
+      width: 90% !important;
+      max-width: 90% !important;
+      padding: 1rem !important;
+      box-sizing: border-box;
+    }
+  
+    .modal-izquierda img {
+      width: 100% !important;
+      height: auto !important;
+      margin-bottom: 1rem;
+    }
+  
+    .modal-derecha {
+      padding: 1rem !important;
+    }
+  
+    .modal-derecha h2 {
+      font-size: 1.2rem !important;
+    }
+  
+    .modal-derecha p {
+      font-size: 1rem !important;
+      margin-bottom: 1rem;
+    }
+  
+    .modelos-miniaturas img {
+      width: 50px !important;
+      height: 50px !important;
+    }
+  
+    .cerrar-modal {
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem !important;
+    }
+  }
+  .bolitas-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .bolita-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .bolita-color:hover {
+    transform: scale(1.1);
+  } 
+  .catalogo h3 {
+    grid-column: 1 / -1; /* Esto hace que el título ocupe toda la fila */
+    font-family: 'Poppins', sans-serif; /* Cambié la fuente para algo más estilizado */
+    font-size: 2rem;
+    font-weight: 600; /* Peso de fuente más ligero para dar un toque moderno */
+    letter-spacing: 1px; /* Un poco de espacio entre las letras */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    text-align: center; /* Centrado */
+    text-transform: uppercase; /* Todo en mayúsculas para dar un efecto más llamativo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar */
+  }
+  .modelos-miniaturas {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+  .modelos-miniaturas img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .modelos-miniaturas img:hover {
+    transform: scale(1.1);
+  }
+  .thumbnail-seleccionada {
+    border-color: #333;
+  }
+  
+  /* ajusta un poco las bolitas si quieres */
+  .bolita-color {
+    width: 24px;
+    height: 24px;
+  }
+  /* Manito al pasar sobre el producto */
+.producto:hover {
+  cursor: pointer;
+}
+
+/* Contenedor de talles */
+.talles-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+/* Botones de talle */
+.talle {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.talle:hover {
+  background: #f0f0f0;
+}
+
+.talle-seleccionado {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+@media (min-width: 600px) {
+  .modal {
+    align-items: flex-start;
+    padding-top: 0rem;
+  }
+  .modal-contenido {
+    margin-top: 3rem; /* ajustá según necesidad */
+  }
+}
+/* Wrapper horizontal para miniaturas + talles */
+.info-footer {
+  display: flex;
+  flex-direction: column; /* apila verticalmente */
+  gap: 1rem;              /* espacio entre miniaturas y talles */
+  margin-top: 1.5rem;
+}
+
+/* Asegurá que ambos elementos tomen su ancho natural */
+.info-footer .talles-container , .info-footer .modelos-miniaturas {
+  flex: 0 0 auto;
+}
+.subtitulo-talles {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.talles-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.modelos-miniaturas {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
